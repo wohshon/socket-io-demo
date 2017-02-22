@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 function callServer (payload) {
 //var socket = require('socket.io-client')('http://192.168.223.130:3001');
 var io = require('socket.io-client');
-var target=process.env.TARGET || 'http://localhost:8082';
+var target=process.env.TARGET || 'http://localhost:8080';
 var socket = io.connect(target, {reconnect: true});
 //var socket = io.connect("http://socket-rest-wohshon.44fs.preview.openshiftapps.com/", {reconnect: true});
 socket.on('connect', function(){
