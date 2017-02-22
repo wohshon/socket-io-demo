@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
 function callServer (payload) {
 //var socket = require('socket.io-client')('http://192.168.223.130:3001');
 var io = require('socket.io-client');
+var target=process.env.TARGET || 'http://localhost:3000';
 var socket = io.connect('http://localhost:3000', {reconnect: true});
 
 socket.on('connect', function(){
