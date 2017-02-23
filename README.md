@@ -14,7 +14,7 @@ Assuming you have nodejs setup
 
   * prepare a payload in json format
 
-~~ 
+```
 
 { 
   "traveller": "Jim",  
@@ -37,7 +37,7 @@ Assuming you have nodejs setup
      "carDays": 50 } 
 }
 
-~~~
+```
 
 
   * fire the command 
