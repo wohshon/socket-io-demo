@@ -10,7 +10,7 @@ Assuming you have nodejs setup
 
 ### Testing the app
 
-  * open the url http://<hostname>:8080
+  * open the url `http://<hostname>:8080`
 
   * prepare a payload in json format
 
@@ -42,3 +42,5 @@ Assuming you have nodejs setup
   * fire the command 
 
   `curl -X POST -H "Content-Type: application/json" -d @mypayload.json http://<host>:8080/events`
+
+  You should see some text being displayed on the browser
