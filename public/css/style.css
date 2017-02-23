@@ -5,3 +5,13 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+.navbar{background-color:#cba; font-size:2em; height:3em; line-height:3em; border:0;}
+.navbar li a{ line-height:2em; color:#321;   font-family: 'Merienda', cursive;
+}
+.navbar-brand{ padding-right:2em;
+line-height:1.25em;
+  font-family: 'Merienda', cursive;
+color:white; font-size:1.5em}
+
+.navbar .navbar-brand{color: black}
