@@ -14,8 +14,7 @@ Assuming you have nodejs setup
 
   * prepare a payload in json format
 
-~~
- { 
+~~ { 
   "traveller": "Jim",  
   "flightReq" : 
    { "flightFrom": "GRU",
