@@ -35,8 +35,7 @@ Assuming you have nodejs setup
        "carStartDate": "2017-02-28",
        "carDays": 50 } 
   }
-
-```
+ ```
 
 
   * fire the command 
