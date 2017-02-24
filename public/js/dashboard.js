@@ -12,23 +12,43 @@ var dashboard={
 		socket=io();
 		//socket = io.connect('http://192.168.223.130:3001');
 		socket.on('connect', function(){
-			$('#msg').html('connected to server');
+			//$('#msg').html('connected to server');
 			console.log('connected to server :  socket id: '+socket.id);
 		});
 		socket.on('adminMsg',function(data){
 			//alert(data.msg);
-			$('#msg').html(data.msg);
 			//update UI
+			$('#msg').html(data.msg);
 		});//
 		socket.on('sendToWeb',function(data){
-			console.log('web client : '+data);
-			var display="<div>"+data+"</div>"
-			if (data.name) {
-			  display="<div>"+data.name+"</div>"				
+
+			console.log('web client : '+Object.keys(data));
+			//var parsedData = JSON.parse(data); // not needed
+			var parsedData = data;
+			//console.log(" parse " +Object.keys(parsedData));
+			var display="<div>"+parsedData+"</div>"
+			if (parsedData.traveller) {
+			  //display="<div>"+parsedData.traveller+"</div>"
+			  display=renderDisplay(parsedData);
 			}
 			$('#msg1').html($('#msg1').html()+'</p>  '+display);
-
 		});//
+
+		function renderDisplay(data) {
+		   var  display="";
+		   display+= "<div><b>"+data.traveller+"'s travel booking:</b></div>";
+		   display+="<div></div>";
+		   if (data.flightReq) {
+		       display+="<div><b>flight : </b>"+data["flightReq"].flightNo+"</div>";
+		   }
+		   if (data.hotelReq) {
+		       display+="<div><b>Hotel : </b>"+data["hotelReq"].hotelId+"</div>";
+		   }
+		   if (data.carReq) {
+		       display+="<div><b>Car Rental : </b>"+data["carReq"].carRentalCo+"</div>";
+		   }		   		   
+		   return display;
+		}
 /*		socket.on('gotMessage',function(data){
 			//alert(data.msg);
 			$('#msg').html($('#msg').html()+'</p>'+data.msg);

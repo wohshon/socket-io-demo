@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
 });
 
 function callServer (payload) {
+console.log("inside call server");
 //var socket = require('socket.io-client')('http://192.168.223.130:3001');
 var io = require('socket.io-client');
 var target=process.env.TARGET || 'http://localhost:8080';
@@ -30,7 +31,9 @@ socket.on('disconnect', function(){
  console.log('[Client] I am disconnected!!');
 });
 
-console.log(payload);
+console.log("[call server] "+payload);
+
+console.log("[call server] "+Object.keys(payload));
 socket.emit('updateDashboard', payload);   
 
 

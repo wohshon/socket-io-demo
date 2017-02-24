@@ -43,4 +43,3 @@ Assuming you have nodejs setup
   `curl -X POST -H "Content-Type: application/json" -d @mypayload.json http://<host>:8080/events`
 
   You should see some text being displayed on the browser
-
