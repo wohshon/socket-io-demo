@@ -33,7 +33,7 @@ g g {animation: spin 16s linear infinite; transform-origin: 50% 50%;}
   100%{transform: rotate(360deg);}
 }
 
-svg{width: 100%; height: 15rem;display:block;}
+svg{width: 50%; height: 15rem;display:block;}
 
 
 
@@ -64,6 +64,8 @@ svg{width: 100%; height: 15rem;display:block;}
 }
 
 body{padding-right: 33.555%}
+
+body:after{content:""; display: block; position: absolute; top:0; bottom:0; right: 0; width: 33%; ; background-color:rgba(10,30,50,0.75)}
 
 @keyframes appear{0%{opacity:0}
   100%{opacity:1; transform: translate(0,0)}}
