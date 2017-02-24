@@ -1,7 +1,7 @@
 var socket;
 
 var dashboard={
-	
+
 	init:function () {
 	    //alert(123);
 	    //post to connect
@@ -29,9 +29,11 @@ var dashboard={
 			var display="<div>"+parsedData+"</div>"
 			if (parsedData.traveller) {
 			  //display="<div>"+parsedData.traveller+"</div>"
-			  display=renderDisplay(parsedData);
+			//  display=renderDisplay(parsedData);
+				display="<section>"+renderDisplay(parsedData)+"</section>";
+
 			}
-			$('#msg1').html($('#msg1').html()+'</p>  '+display);
+			$('#msg1').html($('#msg1').html()+'  '+display);
 		});//
 
 		function renderDisplay(data) {
@@ -39,14 +41,14 @@ var dashboard={
 		   display+= "<div><b>"+data.traveller+"'s travel booking:</b></div>";
 		   display+="<div></div>";
 		   if (data.flightReq) {
-		       display+="<div><b>flight : </b>"+data["flightReq"].flightNo+"</div>";
+		       display+="<div><b class=\"flight\">flight : </b>"+data["flightReq"].flightNo+"</div>";
 		   }
 		   if (data.hotelReq) {
-		       display+="<div><b>Hotel : </b>"+data["hotelReq"].hotelId+"</div>";
+		       display+="<div><b class=\"hotel\">Hotel : </b>"+data["hotelReq"].hotelId+"</div>";
 		   }
 		   if (data.carReq) {
-		       display+="<div><b>Car Rental : </b>"+data["carReq"].carRentalCo+"</div>";
-		   }		   		   
+		       display+="<div><b class=\"car\">Car Rental : </b>"+data["carReq"].carRentalCo+"</div>";
+		   }
 		   return display;
 		}
 /*		socket.on('gotMessage',function(data){
@@ -54,6 +56,6 @@ var dashboard={
 			$('#msg').html($('#msg').html()+'</p>'+data.msg);
 			//update UI
 		});//*/
-			
+
 	}
 };
