@@ -1,7 +1,84 @@
 body {
-  padding-top: 50px;
+padding-top: 10rem;
+background-color:#156; color: white;
+min-height: 100vh;
+background-image: url(../img/splash.jpg);
+background-size: cover;
+background-position: 10% 50%;
+background-repeat: no-repeat;
 }
+
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
+
+.navbar{ background-color:transparent;
+
+  background:linear-gradient( to top, transparent, rgba(0,20,40,0.8)); ;font-size:2em; height:18rem; line-height:3em; border:0;}
+.navbar li a{ line-height:2em; color:#fff;   font-family: 'Merienda', cursive;
+}
+.navbar-brand{  width: 100%;
+line-height:1.25em;
+  font-family: 'Merienda', cursive;
+color:white; font-size:1.5em}
+
+.navbar .navbar-brand{color: white}
+
+
+g g {animation: spin 16s linear infinite; transform-origin: 50% 50%;}
+
+@keyframes spin{
+  100%{transform: rotate(360deg);}
+}
+
+svg{width: 50%; height: 15rem;display:block;}
+
+
+
+
+.starter-template section{
+
+  background-color:white; color: black; padding: 1em; width: 24em; display:inline-block; text-align:left; margin:.5em; box-shadow: 0 .5em .7em rgba(0,0,0,0.5)}
+
+
+.starter-template section:nth-child(1){animation: newcard .2s linear forwards;}
+.starter-template section div{color:#666; text-transform: uppercase; font-family: monospace; font-size: .8em;}
+.starter-template section div:first-child b{font-size:2em; font-weight: 300; font-family: "open sans",  opensans, overpass, sans-serif; color:#222; margin-bottom:.5em; display:block;}
+
+
+@keyframes newcard{
+  0%{opacity:0; transform: scale(.2)}
+  100%{opacity:1;transform: scale(1)}
+}
+
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+body{padding-right: 33.555%}
+
+body:after{content:""; display: block; position: absolute; top:0; bottom:0; right: 0; width: 33%; ; background-color:rgba(10,30,50,0.75)}
+
+@keyframes appear{0%{opacity:0}
+  100%{opacity:1; transform: translate(0,0)}}
+
+  section:nth-child(10){top:0em}
+  section:nth-child(15){top:30%}
+  section:nth-child(20){top:60%}
+
+  section:nth-child(10) *,
+  section:nth-child(15) *,
+  section:nth-child(20) *{color: white !important}
+section:nth-child(10),
+section:nth-child(15),
+section:nth-child(20){ right:0; height: 30%;background-color:#392; color: white; display:block; position:fixed; width: 30%; z-index:99;
+
+  &:before{content:"WINNER"; position:absolute; color: #c00; ; right:0em; }}
