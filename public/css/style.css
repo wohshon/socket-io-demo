@@ -48,7 +48,7 @@ font-size:2em;
 
 .starter-template section:last-child{animation: newcard 5s ease forwards;display:block; }
 .starter-template section div{color:#222; text-transform: uppercase; font-family: monospace; font-size: .8em;}
-.starter-template section div:first-child b{font-size:2em; font-weight: 300; font-family: "open sans",  opensans, overpass, sans-serif; color:#222; margin-bottom:.5em; display:block;}
+.starter-template section div:first-child b{font-size:2em;    font-family: 'Merienda', cursive;  color:#222; margin-bottom:.5em; text-align:center; display:block; text-transform: lowercase; letter-spacing:-.05em; width: 100%;}
 
 
 @keyframes newcard{
