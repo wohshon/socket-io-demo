@@ -41,13 +41,13 @@ var dashboard={
 		   display+= "<div><b>"+data.traveller+"'s travel booking:</b></div>";
 		   display+="<div></div>";
 		   if (data.flightReq) {
-		       display+="<div><b class=\"flight\">flight : </b>"+data["flightReq"].flightNo+"</div>";
+		       display+="<div class=\"flight\"><b >flight : </b>"+data["flightReq"].flightNo+"</div>";
 		   }
 		   if (data.hotelReq) {
-		       display+="<div><b class=\"hotel\">Hotel : </b>"+data["hotelReq"].hotelId+"</div>";
+		       display+="<div class=\"hotel\"><b >Hotel : </b>"+data["hotelReq"].hotelId+"</div>";
 		   }
 		   if (data.carReq) {
-		       display+="<div><b class=\"car\">Car Rental : </b>"+data["carReq"].carRentalCo+"</div>";
+		       display+="<div class=\"car\"><b >Car Rental : </b>"+data["carReq"].carRentalCo+"</div>";
 		   }
 		   return display;
 		}
