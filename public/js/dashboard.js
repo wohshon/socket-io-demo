@@ -38,7 +38,7 @@ var dashboard={
 
 		function renderDisplay(data) {
 		   var  display="";
-		   display+= "<div><b>"+data.traveller+"'s travel booking:</b></div>";
+		   display+= "<div><b>"+data.traveller+"'s booking:</b></div>";
 		   display+="<div></div>";
 		   if (data.flightReq) {
 		       display+="<div class=\"flight\"><b >flight : </b>"+data["flightReq"].flightNo+"</div>";
