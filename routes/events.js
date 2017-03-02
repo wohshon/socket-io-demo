@@ -34,6 +34,7 @@ socket.on('disconnect', function(){
 console.log("[call server] "+payload);
 
 console.log("[call server] "+Object.keys(payload));
+//listener is in bin/www
 socket.emit('updateDashboard', payload);   
 
 

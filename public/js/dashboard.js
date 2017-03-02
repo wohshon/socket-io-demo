@@ -27,13 +27,19 @@ var dashboard={
 			var parsedData = data;
 			//console.log(" parse " +Object.keys(parsedData));
 			var display="<div>"+parsedData+"</div>"
+			//flow for booking request
 			if (parsedData.traveller) {
 			  //display="<div>"+parsedData.traveller+"</div>"
 			//  display=renderDisplay(parsedData);
 				display="<section>"+renderDisplay(parsedData)+"</section>";
+				$('#msg1').html($('#msg1').html()+'  '+display);
+
+			} else if (parsedData.podCount) {
+				console.log("*****"+parsedData.podCount);
+				display="<section>"+parsedData.podCount+ " pods</section>";
+				$('#msg').html($('#msg').html()+'  '+display);
 
 			}
-			$('#msg1').html($('#msg1').html()+'  '+display);
 		});//
 
 		function renderDisplay(data) {

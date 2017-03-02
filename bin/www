@@ -40,6 +40,7 @@ io.on('connection', function(socket){
         console.log('[Server] client disconnected');
   });       
 
+//emited from events.js
   socket.on('updateDashboard', function(data){
         console.log(' server: updateDashboard: '+data);
         io.emit('sendToWeb', data);
