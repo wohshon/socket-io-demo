@@ -14,6 +14,11 @@ Assuming you have nodejs setup
 
   * prepare a payload in json format
 
+
+#### Use case 1 : booking request
+
+  Create the following payload in a file, e.g. `payload.json`
+
   ```
   { 
     "traveller": "Jim",  
@@ -40,6 +45,38 @@ Assuming you have nodejs setup
 
   * fire the command 
 
-  `curl -X POST -H "Content-Type: application/json" -d @mypayload.json http://<host>:8080/events`
+  `curl -X POST -H "Content-Type: application/json" -d @payload.json http://<host>:8080/events`
 
   You should see some text being displayed on the browser
+
+#### Use case 2 :POD counts
+
+  Create the following payload in a file, e.g. `payload.json`
+
+  ```
+  { "podCount" : "5" }
+ ```
+
+  e.g. `curl  -X POST -H "Content-Type: application/json" -d '{"podCount":"5"}' http://<host>/events;`
+
+  * fire the command 
+
+
+  You should see some text being displayed on the browser
+
+
+#### Use case 3 : Event from backend
+
+  Create the following payload in a file, e.g. `payload.json`
+
+  ```
+  { "event" : "fuse" }
+ ```
+
+  e.g. `curl  -X POST -H "Content-Type: application/json" -d '{"event":"fuse"}' http://<host>/events;`
+
+  * fire the command 
+
+
+  You should see some text being displayed on the browser
+
