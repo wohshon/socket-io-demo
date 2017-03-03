@@ -72,8 +72,10 @@ Assuming you have nodejs setup
   ```
   { "event" : "fuse" }
  ```
+ 
+  Note the additional path 
 
-  e.g. `curl  -X POST -H "Content-Type: application/json" -d '{"event":"fuse"}' http://<host>/events;`
+  e.g. `curl  -X POST -H "Content-Type: application/json" -d '{"event":"fuse"}' http://<host>/events/fuse;`
 
   * fire the command 
 
