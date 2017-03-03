@@ -23,12 +23,14 @@ var dashboard={
 		socket.on('sendToWeb',function(data){
 
 			console.log('web client : '+Object.keys(data));
+			console.log('source : '+data["source"]);
 			//var parsedData = JSON.parse(data); // not needed
 			var parsedData = data;
 			//console.log(" parse " +Object.keys(parsedData));
 			var display="<div>"+parsedData+"</div>"
 			//flow for booking request
-			if (parsedData.traveller) {
+//			if (parsedData.traveller) {
+			if (parsedData["source"]=="mobile" && parsedData.traveller) {
 			  //display="<div>"+parsedData.traveller+"</div>"
 			//  display=renderDisplay(parsedData);
 				display="<section>"+renderDisplay(parsedData)+"</section>";
@@ -39,6 +41,11 @@ var dashboard={
 				display="<section>"+parsedData.podCount+ " pods</section>";
 				$('#msg').html($('#msg').html()+'  '+display);
 
+			} else if (parsedData["source"]=="fuse"){
+				console.log("*****Event from Fuse***");
+                                display="<section>Booking received from Backend "+parsedData+ " </section>";
+                                $('#msg2').html($('#msg2').html()+'  '+display);
+				
 			}
 		});//
 

@@ -1,8 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
+router.post('/fuse', function(req, res, next) {
+  callServer(req.body,'fuse');
+  res.send('ok!');
+});
+
 router.post('/', function(req, res, next) {
-  callServer(req.body);
+  callServer(req.body,'mobile');
   res.send('ok!');
 });
 
@@ -12,8 +17,9 @@ router.get('/', function(req, res, next) {
   res.send('ok!');
 });
 
-function callServer (payload) {
-console.log("inside call server");
+function callServer (payload, source) {
+console.log("inside call server from  "+source);
+payload["source"]=source;
 //var socket = require('socket.io-client')('http://192.168.223.130:3001');
 var io = require('socket.io-client');
 var target=process.env.TARGET || 'http://localhost:8080';
