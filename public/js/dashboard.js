@@ -22,15 +22,17 @@ var dashboard={
 		});//
 		socket.on('sendToWeb',function(data){
 
-			//console.log('web client : '+Object.keys(data));
-			//console.log('source : '+data["source"]);
+			console.log('web client : '+Object.keys(data));
+			console.log('source : '+data["source"]);
 			//var parsedData = JSON.parse(data); // not needed
 			var parsedData = data;
 			//console.log(" parse " +Object.keys(parsedData));
 			var display="<div>"+parsedData+"</div>"
 			//flow for booking request
 //			if (parsedData.traveller) {
+	console.log("ddd "+parsedData.traveller);
 			if (parsedData["source"]=="mobile" && parsedData.traveller) {
+
 			  //display="<div>"+parsedData.traveller+"</div>"
 			//  display=renderDisplay(parsedData);
 				display="<section>"+renderDisplay(parsedData)+"</section>";
