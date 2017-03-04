@@ -22,8 +22,8 @@ var dashboard={
 		});//
 		socket.on('sendToWeb',function(data){
 
-			console.log('web client : '+Object.keys(data));
-			console.log('source : '+data["source"]);
+			//console.log('web client : '+Object.keys(data));
+			//console.log('source : '+data["source"]);
 			//var parsedData = JSON.parse(data); // not needed
 			var parsedData = data;
 			//console.log(" parse " +Object.keys(parsedData));
@@ -37,12 +37,12 @@ var dashboard={
 				$('#msg1').html($('#msg1').html()+'  '+display);
 
 			} else if (parsedData.podCount) {
-				console.log("*****"+parsedData.podCount);
+				//console.log("*****"+parsedData.podCount);
 				display="<section>"+parsedData.podCount+ " pods</section>";
 				$('#msg').html($('#msg').html()+'  '+display);
 
 			} else if (parsedData["source"]=="fuse"){
-				console.log("*****Event from Fuse***");
+				//console.log("*****Event from Fuse***");
                                 display="<section>Booking received from Backend "+parsedData+ " </section>";
                                 $('#msg2').html($('#msg2').html()+'  '+display);
 				
