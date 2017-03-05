@@ -75,11 +75,15 @@ var dashboard={
 		   }
 		   return display;
 		}
+
+
 /*		socket.on('gotMessage',function(data){
 			//alert(data.msg);
 			$('#system-messages').html($('#system-messages').html()+'</p>'+data.system-messages);
 			//update UI
 		});//*/
+
+
 
 	}
 };
