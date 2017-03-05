@@ -46,19 +46,9 @@ var dashboard={
 
 			} else if (parsedData["source"]=="fuse"){
 				console.log("*****Event from Fuse***");
-                                display="<div><h3>Booking from Fuse</h3> "+parsedData+ " </div>";
-                                $('#fuse-bookings').html($('#fuse-bookings').html()+'  '+display);
-
-				//console.log("*****"+parsedData.podCount);
-				display="<section>"+parsedData.podCount+ " pods</section>";
-				$('#msg').html($('#msg').html()+'  '+display);
-
-			} else if (parsedData["source"]=="fuse"){
-				//console.log("*****Event from Fuse***");
-                                display=$('#msg2').html()+'  '+"<section>Booking received from Backend "+eval(parsedData.event+FuseRequest)+ " </section>";
-                                $('#msg2').html(display);
-                                FuseRequest+=parsedData.event;
-				
+                                	display="<div><h3>Booking from Fuse</h3> "+eval(FuseRequest+parsedData.event)+ " </div>";
+                                	$('#fuse-bookings').html($('#fuse-bookings').html()+'  '+display);
+                                	FuseRequest+=parsedData.event;				
 			}
 		});//
 
