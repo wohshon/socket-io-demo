@@ -40,7 +40,7 @@ Assuming you have nodejs setup
        "carStartDate": "2017-02-28",
        "carDays": 50 } 
   }
- ```
+```
 
 
   * fire the command 
@@ -72,8 +72,10 @@ Assuming you have nodejs setup
   ```
   { "event" : "fuse" }
  ```
+ 
+  Note the additional path 
 
-  e.g. `curl  -X POST -H "Content-Type: application/json" -d '{"event":"fuse"}' http://<host>/events;`
+  e.g. `curl  -X POST -H "Content-Type: application/json" -d '{"event":"fuse"}' http://<host>/events/fuse;`
 
   * fire the command 
 

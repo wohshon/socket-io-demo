@@ -30,7 +30,9 @@ var dashboard={
 			var display="<div>"+parsedData+"</div>"
 			//flow for booking request
 //			if (parsedData.traveller) {
+	console.log("ddd "+parsedData.traveller);
 			if (parsedData["source"]=="mobile" && parsedData.traveller) {
+
 			  //display="<div>"+parsedData.traveller+"</div>"
 			//  display=renderDisplay(parsedData);
 				display="<div class=\"booking\">"+renderDisplay(parsedData)+"</div>";
@@ -45,6 +47,15 @@ var dashboard={
 				console.log("*****Event from Fuse***");
                                 display="<div><h3>Booking from Fuse</h3> "+parsedData+ " </div>";
                                 $('#fuse-bookings').html($('#fuse-bookings').html()+'  '+display);
+
+				//console.log("*****"+parsedData.podCount);
+				display="<section>"+parsedData.podCount+ " pods</section>";
+				$('#msg').html($('#msg').html()+'  '+display);
+
+			} else if (parsedData["source"]=="fuse"){
+				//console.log("*****Event from Fuse***");
+                                display="<section>Booking received from Backend "+parsedData+ " </section>";
+                                $('#msg2').html($('#msg2').html()+'  '+display);
 
 			}
 		});//
