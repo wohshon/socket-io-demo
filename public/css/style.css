@@ -6,16 +6,23 @@ h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 
 
 .show-latest-only > div{display:none; transition: all .5s ease;}
 .show-latest-only > div:last-child{  display:inline-block;}
-.booking:last-child{position: absolute; right: 0; top: 1em; animation: newcard 1s ease forwards;}
+.booking:last-child{position: absolute;left:50%; top: 1em; animation: newcard 1s ease forwards;}
 
 .booking:nth-child(3),
 .booking:nth-child(10),
 .booking:nth-child(15){
   display:inline-block;
   margin-bottom:3em;
-  position:relative !important;
+  position:absolute !important;
   right:auto; top:auto;
+  bottom:0;
+  width: 33%;
   background-color:#392;}
+
+
+  .booking:nth-child(3){left:0}
+  .booking:nth-child(10){left:33.3333%}
+  .booking:nth-child(15){left:66.6666%}
 
 .booking:nth-child(3):last-child,
 .booking:nth-child(10):last-child,
@@ -23,9 +30,9 @@ h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 
 
 .booking:last-child h3:before{content:"LATEST BOOKING "}
 
-.booking:nth-child(3) h3:before,
-.booking:nth-child(10) h3:before,
-.booking:nth-child(15) h3:before{content:"WINNER "}
+.booking:nth-child(3) h3:before{content:"1ST WINNER "}
+.booking:nth-child(10) h3:before{content:"2ND WINNER "}
+.booking:nth-child(15) h3:before{content:"3RD WINNER "}
 
 .booking:nth-child(3):after,
 .booking:nth-child(10):after,
@@ -58,7 +65,7 @@ h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 
 .booking .car{   background-image:url(../img/car.svg); }
 .booking b{display:inline-block; width: 5em;  font-weight: 400;}
 @keyframes newcard{  0%{opacity:0; transform: scale(1.1); background-color:#c00;}  100%{opacity:1; transform: scale(1)}}
-@keyframes wincard{  0%{opacity:0; transform: scale(.9)}  100%{opacity:1; transform: scale(1)}}
+@keyframes wincard{  0%{opacity:0; transform: translate(0,-12em) scale(.9)}  100%{opacity:1; transform: scale(1)}}
 
 @keyframes newpod{
   0%{background-color:#900; color:#c00;
@@ -78,6 +85,7 @@ body {
 font-family:overpass, sans-serif;
 background-color:#111; color: white;
 min-height: 100vh;
+font-size:.9em;
 background: linear-gradient(135deg, #1a1a1a 0%, #222 15%, #1a1a1a 15%, #222 80%, #1a1a1a 80%, #222 100%);
 background-image: url(../img/splash.jpg);
 background-size: cover; background-position: 10% 50%; background-repeat: no-repeat;
@@ -92,7 +100,8 @@ h1,h2,h3,h4{ font-family: overpass, sans-serif; margin:0; padding:0;}
 .main-logo g g {animation: spin 16s linear infinite; transform-origin: 50% 50%;}
 @keyframes spin{  100%{transform: rotate(360deg);}}
 
-
+.qrcode{width:15rem; height:15rem; position:absolute; top:0rem; right:0rem;}
+.burl{position:absolute; top: 15rem; right:0; width: 15rem; text-align:center; font-size:1.4em; text-transform: uppercase; letter-spacing:.1em;}
 
 
 
