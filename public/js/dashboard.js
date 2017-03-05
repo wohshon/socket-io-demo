@@ -11,6 +11,7 @@ var dashboard={
 		});*/
 		socket=io();
 		//socket = io.connect('http://192.168.223.130:3001');
+		var FuseRequest=0;
 		socket.on('connect', function(){
 			//$('#msg').html('connected to server');
 			console.log('connected to server :  socket id: '+socket.id);
@@ -45,8 +46,9 @@ var dashboard={
 
 			} else if (parsedData["source"]=="fuse"){
 				//console.log("*****Event from Fuse***");
-                                display="<section>Booking received from Backend "+parsedData+ " </section>";
-                                $('#msg2').html($('#msg2').html()+'  '+display);
+                                display=$('#msg2').html()+'  '+"<section>Booking received from Backend "+eval(parsedData.event+FuseRequest)+ " </section>";
+                                $('#msg2').html(display);
+                                FuseRequest+=parsedData.event;
 				
 			}
 		});//
