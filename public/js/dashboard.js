@@ -19,7 +19,7 @@ var dashboard={
 		socket.on('adminMsg',function(data){
 			//alert(data.msg);
 			//update UI
-			$('#msg').html(data.msg);
+			$('#system-messages').html(data.msg);
 		});//
 		socket.on('sendToWeb',function(data){
 
@@ -36,10 +36,19 @@ var dashboard={
 
 			  //display="<div>"+parsedData.traveller+"</div>"
 			//  display=renderDisplay(parsedData);
-				display="<section>"+renderDisplay(parsedData)+"</section>";
-				$('#msg1').html($('#msg1').html()+'  '+display);
+				display="<div class=\"booking\">"+renderDisplay(parsedData)+"</div>";
+				$('#bookings').html($('#bookings').html()+'  '+display);
 
 			} else if (parsedData.podCount) {
+				console.log("*****"+parsedData.podCount);
+				display="<div class=\"pods\"><h2>"+parsedData.podCount+ "</h2><p>pods</p></div>";
+				$('#pod-count').html($('#pod-count').html()+'  '+display);
+
+			} else if (parsedData["source"]=="fuse"){
+				console.log("*****Event from Fuse***");
+                                display="<div><h3>Booking from Fuse</h3> "+parsedData+ " </div>";
+                                $('#fuse-bookings').html($('#fuse-bookings').html()+'  '+display);
+
 				//console.log("*****"+parsedData.podCount);
 				display="<section>"+parsedData.podCount+ " pods</section>";
 				$('#msg').html($('#msg').html()+'  '+display);
@@ -55,24 +64,28 @@ var dashboard={
 
 		function renderDisplay(data) {
 		   var  display="";
-		   display+= "<div><b>"+data.traveller+"'s booking:</b></div>";
-		   display+="<div></div>";
+		   display+= "<h3>"+data.traveller+"'s booking:</h3>";
+		//   display+="<div></div>";
 		   if (data.flightReq) {
-		       display+="<div class=\"flight\"><b >flight : </b>"+data["flightReq"].flightNo+"</div>";
+		       display+="<div class=\"flight\"><b >Flight # : </b>"+data["flightReq"].flightNo+"</div>";
 		   }
 		   if (data.hotelReq) {
 		       display+="<div class=\"hotel\"><b >Hotel : </b>"+data["hotelReq"].hotelId+"</div>";
 		   }
 		   if (data.carReq) {
-		       display+="<div class=\"car\"><b >Car Rental : </b>"+data["carReq"].carRentalCo+"</div>";
+		       display+="<div class=\"car \"><b >Vehicle : </b>"+data["carReq"].carRentalCo+"</div>";
 		   }
 		   return display;
 		}
+
+
 /*		socket.on('gotMessage',function(data){
 			//alert(data.msg);
-			$('#msg').html($('#msg').html()+'</p>'+data.msg);
+			$('#system-messages').html($('#system-messages').html()+'</p>'+data.system-messages);
 			//update UI
 		});//*/
+
+
 
 	}
 };
