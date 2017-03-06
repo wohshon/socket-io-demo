@@ -1,13 +1,21 @@
 *{box-sizing:border-box}
 /*
-WINNER SELECTIO}N CODE
+WINNER SELECTION
 */
+
+
+
 h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 1.2em; text-align:center; max-width: 30em; }
+
+
+
+.booking{display:none}
 
 .show-latest-only > div{display:none; transition: all .5s ease;}
 .show-latest-only > div:last-child{  display:inline-block;}
-.booking:last-child{position: absolute;left:50%; top: 1em; animation: newcard 1s ease forwards;}
+.booking:last-child{position: absolute; right:0%; top: 1em; animation: newcard 1s ease forwards;}
 
+.winner,
 .booking:nth-child(3),
 .booking:nth-child(10),
 .booking:nth-child(15){
@@ -16,6 +24,7 @@ h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 
   position:absolute !important;
   right:auto; top:auto;
   bottom:0;
+  min-height:10em;
   width: 33%;
   background-color:#392;}
 
@@ -24,19 +33,24 @@ h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 
   .booking:nth-child(10){left:33.3333%}
   .booking:nth-child(15){left:66.6666%}
 
+
+.winner:last-child,
 .booking:nth-child(3):last-child,
 .booking:nth-child(10):last-child,
 .booking:nth-child(15):last-child{animation: wincard 1s ease forwards;}
+.booking h3:before{ font-size:.5em; display:block;}
+.booking:last-child h3:before{content:"LATEST BOOKING ";}
 
-.booking:last-child h3:before{content:"LATEST BOOKING "}
-
-.booking:nth-child(3) h3:before{content:"1ST WINNER "}
+.winner h3:before,
+.booking:nth-child(3) h3:before{content:"1ST WINNER " }
 .booking:nth-child(10) h3:before{content:"2ND WINNER "}
 .booking:nth-child(15) h3:before{content:"3RD WINNER "}
 
+.winner:after,
 .booking:nth-child(3):after,
 .booking:nth-child(10):after,
 .booking:nth-child(15):after{
+
   content: "";
   position: absolute;
   display: block;

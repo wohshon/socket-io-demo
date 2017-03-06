@@ -25,12 +25,11 @@
 <h1>Bookings dashboard</h1>
 <div class="content">
 
-  <img src="/img/destinasia-qr.png" alt="QR code" class="qrcode "/>
-  <p class="burl">booktriplah.com</p>
-<section class="system-messages" id="system-messages"></section>
+  <section class="system-messages" id="system-messages"></section>
+  <section id="total-count">0</section>
 
 <section id="pod-count"      class="show-latest-only" ></section>
-<section id="bookings"       class="show-latest-only" ></section>
+<section id="bookings"     class="show-latest-only" ></section>
 <section id="fuse-bookings"  class="show-latest-only" ></section>
 </div>
 
@@ -42,18 +41,28 @@
 dashboard.init();
 
 function reverseChildNodes(node) {
-    var parentNode = node.parentNode, nextSibling = node.nextSibling,
+
+  if (node)  {
+     var parentNode = node.parentNode, nextSibling = node.nextSibling,
         frag = node.ownerDocument.createDocumentFragment();
     parentNode.removeChild(node);
     while(node.lastChild)
         frag.appendChild(node.lastChild);
     node.appendChild(frag);
     parentNode.insertBefore(node, nextSibling);
+  }
     return node;
 }
 
 reverseChildNodes(document.getElementById('msg1'));
 
+
+
+bookingsCount();
+function bookingsCount() {
+    var x = document.getElementById("bookings").querySelectorAll(".booking");
+    document.getElementById("total-count").innerHTML = x.length;
+}
 
 
 </script>

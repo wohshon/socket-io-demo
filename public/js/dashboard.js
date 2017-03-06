@@ -23,7 +23,7 @@ var dashboard={
 		});//
 		socket.on('sendToWeb',function(data){
 
-			console.log('web client : '+Object.keys(data));
+			//console.log('web client : '+Object.keys(data));
 			console.log('source : '+data["source"]);
 			//var parsedData = JSON.parse(data); // not needed
 			var parsedData = data;
@@ -34,7 +34,12 @@ var dashboard={
 			if (parsedData["source"]=="mobile" && parsedData.traveller) {
 				console.log("***Mobile:  "+parsedData.traveller);
 				display="<div class=\"booking\">"+renderDisplay(parsedData)+"</div>";
-				$('#bookings').html(display);
+				//$('#bookings').html(display);
+				//remove the last element when we have 4 before populating the next one
+				if ($('#bookings').children().length==4) {
+					$('#bookings').children().last().remove();
+				}				
+				$('#bookings').prepend(display);
 
 			} else if (parsedData.podCount) {
 				console.log("*****"+parsedData.podCount);
