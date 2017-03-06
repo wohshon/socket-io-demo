@@ -37,17 +37,17 @@ var dashboard={
 			  //display="<div>"+parsedData.traveller+"</div>"
 			//  display=renderDisplay(parsedData);
 				display="<div class=\"booking\">"+renderDisplay(parsedData)+"</div>";
-				$('#bookings').html($('#bookings').html()+'  '+display);
+				$('#bookings').html(display);
 
 			} else if (parsedData.podCount) {
 				console.log("*****"+parsedData.podCount);
 				display="<div class=\"pods\"><h2>"+parsedData.podCount+ "</h2><p>pods</p></div>";
-				$('#pod-count').html($('#pod-count').html()+'  '+display);
+				$('#pod-count').html(display);
 
 			} else if (parsedData["source"]=="fuse"){
 				console.log("*****Event from Fuse***");
                                 	display="<div><h3>Booking from Fuse</h3> "+eval(FuseRequest+parsedData.event)+ " </div>";
-                                	$('#fuse-bookings').html($('#fuse-bookings').html()+'  '+display);
+                                	$('#fuse-bookings').html(display);
                                 	FuseRequest+=parsedData.event;				
 			}
 		});//
