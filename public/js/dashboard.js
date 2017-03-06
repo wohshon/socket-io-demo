@@ -31,11 +31,8 @@ var dashboard={
 			var display="<div>"+parsedData+"</div>"
 			//flow for booking request
 //			if (parsedData.traveller) {
-	console.log("ddd "+parsedData.traveller);
 			if (parsedData["source"]=="mobile" && parsedData.traveller) {
-
-			  //display="<div>"+parsedData.traveller+"</div>"
-			//  display=renderDisplay(parsedData);
+				console.log("***Mobile:  "+parsedData.traveller);
 				display="<div class=\"booking\">"+renderDisplay(parsedData)+"</div>";
 				$('#bookings').html(display);
 
