@@ -40,13 +40,13 @@ var dashboard={
 				//remove the last element when we have 4 before populating the next one
 				if ($('#bookings').children().length==4) {
 					$('#bookings').children().last().remove();
-				}	
+				}
 				$('#bookings').prepend(display);
 				if ($('#winnerss').children().length<51) {
 					var winner=$('#bookings').children().first().clone();
 					winner.addClass("winner");
 					$('#winners').append(winner);
-				}				
+				}
 
 			} else if (parsedData.podCount) {
 				console.log("*****"+parsedData.podCount);
@@ -57,13 +57,13 @@ var dashboard={
 				console.log("*****Event from Fuse***");
                                 	display="<div><h3>Booking from Fuse</h3> "+eval(FuseRequest+parsedData.event)+ " </div>";
                                 	$('#fuse-bookings').html(display);
-                                	FuseRequest+=parsedData.event;				
+                                	FuseRequest+=parsedData.event;
 			}
 		});//
 
 		function renderDisplay(data) {
 		   var  display="";
-		   display+= "<h3>"+data.traveller+"'s booking:</h3>";
+		   display+= "<h3>"+data.traveller+"<span>'s booking:</span></h3>";
 		//   display+="<div></div>";
 		   if (data.flightReq) {
 		       display+="<div class=\"flight\"><b >Flight # : </b>"+data["flightReq"].flightNo+"</div>";
