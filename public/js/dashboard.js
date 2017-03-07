@@ -38,13 +38,14 @@ var dashboard={
 				display="<div class=\"booking\">"+renderDisplay(parsedData)+"</div>";
 				//$('#bookings').html(display);
 				//remove the last element when we have 4 before populating the next one
-				if ($('#bookings').children().length==6) {
+				if ($('#bookings').children().length==5) {
 					$('#bookings').children().last().remove();
 				}
 				$('#bookings').prepend(display);
 				if ($('#winnerss').children().length<102) {
 					var winner=$('#bookings').children().first().clone();
 					winner.addClass("winner");
+					winner.removeClass("booking");
 					$('#winners').append(winner);
 				}
 
