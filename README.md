@@ -82,3 +82,6 @@ Assuming you have nodejs setup
 
   You should see some text being displayed on the browser
 
+### testScripts
+
+ createBookings.sh <host>
