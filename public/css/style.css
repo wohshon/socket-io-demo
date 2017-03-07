@@ -13,10 +13,10 @@ h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 
 
 
 
-#bookings{position:fixed; top:1em;right:0; bottom:1em; width: 45%;}
+#bookings{position:fixed; right:0; bottom:1em; width: 45%;}
 .booking{width: 100% !important; margin:0em 0; border-bottom: .2em dotted #333;}
 .booking{padding-left: 18rem !important}
-.booking h3{position:absolute; left:1em; width: 15rem; }
+.booking h3{position:absolute; left:1em; top:1em; width: 15rem; }
 
 
 
@@ -28,19 +28,24 @@ h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 
   background: linear-gradient(to bottom, #666 0%, #555 100%);
 }
 
-
+.tickets{top:-7em;}
+.tickets .booking{height:18vh; padding-top:.5em !important}
 .tickets .booking:nth-child(1){animation: n1 1s ease forwards; transform-origin: 100% 100%}
 .tickets .booking:nth-child(2){animation: n2 1s ease forwards;}
 .tickets .booking:nth-child(3){  animation: n3 1s ease forwards;  }
-.tickets .booking:nth-child(4){animation: n4 1s ease forwards; transform-origin: 0% 0%}
+.tickets .booking:nth-child(4){  animation: n4 1s ease forwards;  }
+.tickets .booking:nth-child(5){  animation: n5 1s ease forwards;  }
+.tickets .booking:nth-child(6){animation: n6 1s ease forwards; transform-origin: 0% 0%}
 
     @keyframes n1{0%{  transform:translate(0,-10%) rotate(5deg) ;
       opacity:0;; 20%{opacity:1;}}
       100%{transform: translate(0,100%)  }}
   @keyframes n2{100%{transform: translate(0,100%)}}
   @keyframes n3{100%{transform: translate(0,100%)}}
+  @keyframes n4{100%{transform: translate(0,100%)}}
+  @keyframes n5{100%{transform: translate(0,100%)}}
 
-  @keyframes n4{
+  @keyframes n6{
     50%{opacity:1;}
     100%{transform: translate(0,140%) rotate(-5deg) scale(1); opacity:0;}}
 
@@ -67,8 +72,8 @@ h1{font-weight: 300; text-transform: uppercase; letter-spacing:.4em; font-size: 
     background-position: 0 -1em;
 }
 
-.booking:nth-child(4):after,
-.booking:nth-child(3):after{
+.booking:nth-child(5):after,
+.booking:nth-child(6):after{
   content: "";
   position: absolute;
   display: block;
@@ -137,13 +142,19 @@ h1,h2,h3,h4{ font-family: overpass, sans-serif; margin:0; padding:0;}
 
 
 #winners{width: 50%;}
-#winners .booking{display:none; border:none;min-height: 4em; padding: 2em !important; background-image:none;;background-color:#153;}
+
+
+#winners .booking{display:none; border:none;min-height: 4em; padding: 1em !important;
+  background-image:none;;background-color:#153; width: auto !important;}
 #winners .booking div{display:none;}
 #winners .booking:before, #winners .booking:after{display:none; border:0 !important;}
 #winners .booking h3{position:relative;}
 #winners .booking h3 span{display:none;}
+
+
 #winners .booking:nth-child(2),
 #winners .booking:nth-child(5),
 #winners .booking:nth-child(15),
 #winners .booking:nth-child(35),
-#winners .booking:nth-child(45){display:inline-block; }
+#winners .booking:nth-child(55),
+#winners .booking:nth-child(95){display:inline-block; }
