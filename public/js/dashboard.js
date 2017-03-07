@@ -29,17 +29,24 @@ var dashboard={
 			var parsedData = data;
 			//console.log(" parse " +Object.keys(parsedData));
 			var display="<div>"+parsedData+"</div>"
+			var winner="";
 			//flow for booking request
 //			if (parsedData.traveller) {
 			if (parsedData["source"]=="mobile" && parsedData.traveller) {
 				console.log("***Mobile:  "+parsedData.traveller);
 				display="<div class=\"booking\">"+renderDisplay(parsedData)+"</div>";
+				display="<div class=\"booking\">"+renderDisplay(parsedData)+"</div>";
 				//$('#bookings').html(display);
 				//remove the last element when we have 4 before populating the next one
 				if ($('#bookings').children().length==4) {
 					$('#bookings').children().last().remove();
-				}				
+				}	
 				$('#bookings').prepend(display);
+				if ($('#winnerss').children().length<51) {
+					var winner=$('#bookings').children().first().clone();
+					winner.addClass("winner");
+					$('#winners').append(winner);
+				}				
 
 			} else if (parsedData.podCount) {
 				console.log("*****"+parsedData.podCount);
